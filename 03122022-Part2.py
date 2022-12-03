@@ -1,9 +1,7 @@
 ### Part 2
 def day3part1(file):
     line = []
-
-    # Convert file into list of list of ints for each line
-    for content in file.readlines():
+    for content in file.readlines(): # convert file into list of list of ints for each line
         priority = []
         for item in content:
             if item.islower():
@@ -11,10 +9,8 @@ def day3part1(file):
             elif item.isupper():
                 priority.append(ord(item)-38)
         line.append(priority)
-
     count = 0
-
-    for i in range(len(line)//3):
+    for i in range(len(line)//3): # perform count of groups
         group = line[i*3:i*3+3] # iterate in sets of three
         count += list(set.intersection(*map(set,group)))[0]
     return count
