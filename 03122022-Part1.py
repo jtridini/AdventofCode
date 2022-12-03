@@ -7,23 +7,16 @@
 ### Part 1
 def day3part1(file):
     count = 0
-
     for content in file.readlines():
-
         priority = []
-
         for item in content:
             if item.islower():
                 priority.append(ord(item)-96) # convert unicode to position on alphabet
             elif item.isupper():
                 priority.append(ord(item)-38)
-
         firstpart, secondpart = priority[:len(priority)//2], priority[len(priority)//2:] # split list in half
-
         #count += np.intersect1d(firstpart,secondpart) # count priority when appearing in both compartments
         count += list(set(firstpart).intersection(secondpart))[0]
-
     return count
-
 filepath = open(r"C:\Users\Jake\Documents\03122022-AoC-Rucksack.txt", 'r')
 print(day3part1(filepath))
