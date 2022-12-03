@@ -1,7 +1,6 @@
 ### Part 1
 def day2part1(file):
-    line = file.readlines()
-    line = [i.rstrip('\n') for i in line]
+    line = [i.rstrip('\n') for i in file.readlines()]
 
     score = 0
 

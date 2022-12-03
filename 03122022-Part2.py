@@ -1,8 +1,7 @@
 ### Part 2
 def day3part2(file,lowercase_offset,uppercase_offset):
     count = 0
-    rucksacks = file.readlines()
-    rucksacks = [i.rstrip('\n') for i in rucksacks]
+    rucksacks = [i.rstrip('\n') for i in file.readlines()]
     for i in range(len(rucksacks)//3):
         group = rucksacks[i*3:i*3+3] # iterate in sets of three
         duplicate = set.intersection(*map(set,group)).pop()

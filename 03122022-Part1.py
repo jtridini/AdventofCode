@@ -1,14 +1,12 @@
 ### Part 1
 def day3part1(file,lowercase_offset,uppercase_offset):
     count = 0
-
     for rucksack in file.readlines():
         halfway = len(rucksack)//2
         rucksack1 = rucksack[:halfway]
         rucksack2 = rucksack[halfway:]
 
         duplicate = set(rucksack1).intersection(rucksack2).pop()
-
         if duplicate.islower():
             count += ord(duplicate)-lowercase_offset # convert unicode to position on alphabet
         elif duplicate.isupper():
